@@ -19,70 +19,89 @@
 // 	alert("Ready");
 // });
 
+/* Je définis element1 et element2, mais je n'ai pas besoin de leur donner de valeur pr l'instant*/
 
-/* Fonction click pr bouton formulaire*/
-
-$('#calc').click(clickButtonFormulaire);
-
-function clickButtonFormulaire(){
-	console.log("Bouton du formulaire");
-}
+var element1;
+var element2;
 
 
-/* Récupérer nombre 1*/
+$('#calc').click(function(){
 
-var element1 = $("nombre1").val();
-console.log("Nombre case 1")
+	/* Récupérer nombre 1*/
+	element1 = $("#nombre1").val();
+	console.log(element1)
+
+	/* Récupérer nombre 2*/
+	element2 = $("#nombre2").val();
+	console.log(element2)
+
+});
 
 
-/* Récupérer nombre 2*/
-
-var element2 = $("nombre2").val();
-console.log("Nombre case 2")
 
 
 /* Définir que ce seront 2 nombres : nombre 1 et nombre 2 avec 10 pr que JS s'y retrouve*/
 
-var nb1 = parseInt(element1, 10);
-var nb2 = parseInt(element2, 10);
+// var nb1 = parseInt(element1, 10);
+// var nb2 = parseInt(element2, 10);
 
 
-/* Récupérer l'opération */
+/* Récupérer l'opérateur */
 
 var operation = $('#formulaire').val();
 console.log("réalise opé");
 
 
-/* Définir le résultat*/
+/* Définir les différentes opérations possibles*/
 
-var resultat = calculer(nb1, nb2, operation);
-console.log("calcule");
+function add(nb1, nb2) {
+	var nb1 = parseInt(element1, 10);
+	var nb2 = parseInt(element2, 10);
+	var result = nb1 + nb2;
+	return result;
+}
+
+function substract(nb1, nb2) {
+	var nb1 = parseInt(element1, 10);
+	var nb2 = parseInt(element2, 10);
+	var result = nb1 - nb2;
+	return result;
+}
+
+function multiply(nb1, nb2) {
+	var nb1 = parseInt(element1, 10);
+	var nb2 = parseInt(element2, 10);
+	var result = nb1 * nb2;
+	return result;
+}
+
+function divide(nb1, nb2) {
+	var nb1 = parseInt(element1, 10);
+	var nb2 = parseInt(element2, 10);
+	var result = nb1 / nb2;
+	return result;
+}
 
 
 /*Créer fonction de calcul*/
 
-function calculer()
+// $('#calc').click(calculer);
 
+// 	function calculer(nb1, nb2, operation) {
 
+// 		if (operation === 'add'){
+// 			console.log(add(nb1, nb2));
+// 		}
+// 		else if {
 
-
-
-// function add(a, b) {
-// 	var result = a + b;
-// 	return result;
-//  }
-
-// function substract(a, b) {
-// 	var result = a - b;
-// 	return result;
+// 		}
 // }
 
-// function multiply(a, b) {
-// 	var result = a * b;
-// 	return result;
-// }
 
-// function divide(a, b) {
-// 	var result = a / b;
-// 	return result;
-// }
+
+/* Définir le résultat*/
+
+// var resultat = calculer(nb1, nb2, operation);
+// console.log("calcule");
+
+// $('#result').text(resultat);
