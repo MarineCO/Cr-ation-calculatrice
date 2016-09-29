@@ -1,107 +1,67 @@
-/* Pour changer couleur du texte de l'input*/
-// var $input = $('input');
-// console.log($input);
-// $input.css('color', 'blue');
-
 
 // CALCULATRICE
 
+(function(){
+	// console.log(Bienvenue);
 
-/* TEST : VERIF QUE DOC BIEN LIE EN RECUPERANT H1:*/
+	$('#calc').click(ButtonFormul);
 
-// var valH1 = $("h1").text();
-// console.log("Mon h1 est ")
+	function ButtonFormul(){
 
+		var element1 = $("#nombre1").val();
+		// console.log("ok" + element1);
 
-/*TEST : FONCTION CLICK*/
+		var element2 = $("#nombre2").val();
+		// console.log("ok" + element2);
 
-// $("#calc").click(function() {
-// 	alert("Ready");
-// });
+		var operation = $('#formulaire').val();
+		// console.log('ope' + operation);
 
-/* Je définis element1 et element2, mais je n'ai pas besoin de leur donner de valeur pr l'instant*/
+		var resultat = calculer(element1, element2, operation);
+		// console.log('cal' + operation);
 
-var element1;
-var element2;
+		$('#result').text(resultat);
+	}
 
+	function add(x, y){
+		var nb1 = parseInt(x, 10);
+		var nb2 = parseInt(y, 10);
+		return nb1 + nb2;
+	}
 
-$('#calc').click(function(){
+	function substract(x, y){
+		var nb1 = parseInt(x, 10);
+		var nb2 = parseInt(y, 10);
+		return nb1 - nb2;
+	}
 
-	/* Récupérer nombre 1*/
-	element1 = $("#nombre1").val();
-	console.log(element1)
+	function multiply(x, y){
+		var nb1 = parseInt(x, 10);
+		var nb2 = parseInt(y, 10);
+		return nb1 * nb2;
+	}
 
-	/* Récupérer nombre 2*/
-	element2 = $("#nombre2").val();
-	console.log(element2)
+	function divide(x, y){
+		var nb1 = parseInt(x, 10);
+		var nb2 = parseInt(y, 10);
+		return nb1 / nb2;
+	}
 
-});
+	function calculer(nb1, nb2, operation) {
 
+		if (operation === '+'){
+			return add(nb1, nb2);
 
+		} else if (operation === '-'){
+			return substract(nb1, nb2);
 
+		}else if (operation === '*'){
+			return multiply(nb1, nb2);
 
-/* Définir que ce seront 2 nombres : nombre 1 et nombre 2 avec 10 pr que JS s'y retrouve*/
+		} else if (operation === '/'){
+			return divide(nb1, nb2);
+		}
 
-// var nb1 = parseInt(element1, 10);
-// var nb2 = parseInt(element2, 10);
+	}
 
-
-/* Récupérer l'opérateur */
-
-var operation = $('#formulaire').val();
-console.log("réalise opé");
-
-
-/* Définir les différentes opérations possibles*/
-
-function add(nb1, nb2) {
-	var nb1 = parseInt(element1, 10);
-	var nb2 = parseInt(element2, 10);
-	var result = nb1 + nb2;
-	return result;
-}
-
-function substract(nb1, nb2) {
-	var nb1 = parseInt(element1, 10);
-	var nb2 = parseInt(element2, 10);
-	var result = nb1 - nb2;
-	return result;
-}
-
-function multiply(nb1, nb2) {
-	var nb1 = parseInt(element1, 10);
-	var nb2 = parseInt(element2, 10);
-	var result = nb1 * nb2;
-	return result;
-}
-
-function divide(nb1, nb2) {
-	var nb1 = parseInt(element1, 10);
-	var nb2 = parseInt(element2, 10);
-	var result = nb1 / nb2;
-	return result;
-}
-
-
-/*Créer fonction de calcul*/
-
-// $('#calc').click(calculer);
-
-// 	function calculer(nb1, nb2, operation) {
-
-// 		if (operation === 'add'){
-// 			console.log(add(nb1, nb2));
-// 		}
-// 		else if {
-
-// 		}
-// }
-
-
-
-/* Définir le résultat*/
-
-// var resultat = calculer(nb1, nb2, operation);
-// console.log("calcule");
-
-// $('#result').text(resultat);
+})();
