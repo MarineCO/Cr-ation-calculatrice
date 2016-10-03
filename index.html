@@ -8,7 +8,7 @@
 <body>
  
 
-	<!-- METHODE INPUT -->
+	<!-- METHODE 1 INPUT -->
 
 <!-- 1) Récupérer contenu 1 et 2 + définir les différents éléments : CHECK
 	 2) Quand click sur opé + calculer = procède à l'opé
@@ -34,39 +34,36 @@
 
 
 
-	<!-- METHODE BUTTON -->
+	<!-- METHODE 2 BUTTON -->
 
-	<!-- <h1>A vos calculs : Méthode 2</h1>
+	<h1>A vos calculs : Méthode 2</h1>
 	<div>
 		<input id="resultat" value="" type="text">
 	</div>
 	<div>
-		<button id="btn-7" value="7">7</button>
-		<button id="btn-8" value="8">8</button>
-		<button id="btn-9" value="9">9</button>
-		<button id="btn-divide" value="/">/</button>
-		<button id="btn-c" value="C">C</button>
+		<button class="number" id="btn-7" data-number="7" value="7">7</button>
+		<button class="number" id="btn-8" data-number="8" value="8">8</button>
+		<button class="number" id="btn-9" data-number="9" value="9">9</button>
+		<button class="ope" id="btn-divide" data-operateur="/" value="/">/</button>
 	</div>
 	<div>
-		<button id="btn-4" value="4">4</button>
-		<button id="btn-5" value="5">5</button>
-		<button id="btn-6" value="6">6</button>
-		<button id="btn-multiply" value="7">x</button>
+		<button class="number" id="btn-4" data-number="4" value="4">4</button>
+		<button class="number" id="btn-5" data-number="5" value="5">5</button>
+		<button class="number" id="btn-6" data-number="6" value="6">6</button>
+		<button class="ope" id="btn-multiply" data-operateur="*" value="*">x</button>
 	</div>
 	<div>
-		<button id="btn-1" value="1">1</button>
-		<button id="btn-2" value="2">2</button>
-		<button id="btn-3" value="3">3</button>
-		<button id="btn-substract" value="-">-</button>
+		<button class="number" id="btn-1" data-number="1" value="1">1</button>
+		<button class="number" id="btn-2" data-number="2" value="2">2</button>
+		<button class="number" id="btn-3" data-number="3" value="3">3</button>
+		<button class="ope" id="btn-substract" data-operateur="-" value="-">-</button>
 	</div>
 	<div>
-		<button id="btn-0" value="0">0</button>
-		<button id="btn-virgule" value=",">,</button>
-		<button id="btn-modulo" value="%">%</button>
-		<button id="btn-add" value="+">+</button>
-		<button id="btn-egal" value="=">=</button>
+		<button class="number" id="btn-0" data-number="0" value="0">0</button>
+		<button class="ope" id="btn-add" data-operateur="+" value="+">+</button>
+		<button class="egal" id="btn-egal" data-calcul="=" value="=">=</button>
 	</div>
-	 -->
+	
 
 
 	<script src="node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
