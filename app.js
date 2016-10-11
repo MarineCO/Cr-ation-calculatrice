@@ -4,23 +4,15 @@
 /* METHODE 1 INPUT */
 
 (function(){
-	// console.log(Bienvenue);
 
 	$('#calc').click(ButtonFormul);
 
 	function ButtonFormul(){
 
 		var element1 = $("#nombre1").val();
-		// console.log("ok" + element1);
-
 		var element2 = $("#nombre2").val();
-		// console.log("ok" + element2);
-
 		var operation = $('#formulaire').val();
-		// console.log('ope' + operation);
-
 		var resultat = calculer(element1, element2, operation);
-		// console.log('cal' + operation);
 
 		$('#result').html(resultat);
 	}
@@ -77,103 +69,99 @@
 
 (function(){
 
-	console.log('methode2');
-
 // Point de départ : variables non déterminés
 
-var nombre1;
-var nombre2;
-var opeRation; 
-var result = 0;
+	var nombre1;
+	var nombre2;
+	var opeRation; 
+	var result = 0;
 
 
 // Définition des différentes opérations utiles
 
-function add(x, y){
-	return x + y;
-}
-
-function substract(x, y){
-	return x - y;
-}
-
-function multiply(x, y){
-	return x * y;
-}
-
-function divide(x, y){
-	return x / y;
-}
-
-function calculer(x, y, opeRation) {
-
-	if (opeRation === '+'){
-		return add(x, y);
-
-	} else if (opeRation === '-'){
-		return substract(x, y);
-
-	}else if (opeRation === '*'){
-		return multiply(x, y);
-
-	} else if (opeRation === '/'){
-		return divide(x, y);
-	} else {
-		return alert('Il y a une erreur, recommencez')
+	function add(x, y){
+		return x + y;
 	}
-}
+
+	function substract(x, y){
+		return x - y;
+	}
+
+	function multiply(x, y){
+		return x * y;
+	}
+
+	function divide(x, y){
+		return x / y;
+	}
+
+	function calculer(x, y, opeRation) {
+
+		if (opeRation === '+'){
+			return add(x, y);
+
+		} else if (opeRation === '-'){
+			return substract(x, y);
+
+		}else if (opeRation === '*'){
+			return multiply(x, y);
+
+		} else if (opeRation === '/'){
+			return divide(x, y);
+
+		} else {
+			return alert('Il y a une erreur, recommencez')
+		}
+	}
 
 // Click sur les nombres 
 
-$(".number").click(function(){
-	var nombre = parseInt($(this).data('number'));
-	console.log(nombre);
+	$(".number").click(function(){
+		var nombre = parseInt($(this).data('number'));
 
-	if (nombre1 === undefined) {
-		nombre1 = nombre;
-		$("#resultat").text(nombre);
+		if (nombre1 === undefined) {
+			nombre1 = nombre;
+			$("#resultat").text(nombre);
 
-	} else {
-		nombre2 = nombre;
-		$("#resultat").text(nombre);
-	}
+		} else {
+			nombre2 = nombre;
+			$("#resultat").text(nombre);
+		}
 
-});
+	});
 
 // Click sur les opérateurs 
 
-$(".ope").click(function(){
+	$(".ope").click(function(){
 
-	opeRation = $(this).data('operateur');
-	console.log(opeRation);
+		opeRation = $(this).data('operateur');
 
-	if (opeRation === null){
-		opeRation = 'add';
-		$("#resultat").text('+');
+		if (opeRation === null){
+			opeRation = 'add';
+			$("#resultat").text('+');
 
+		} else if (opeRation === null){
+			opeRation = 'substract';
+			$("#resultat").text('-');
 
-	} else if (opeRation === null){
-		opeRation = 'substract';
-		$("#resultat").text('-');
+		} else if (opeRation === null){
+			opeRation = 'multiply';
+			$("#resultat").text('*');
 
-	} else if (opeRation === null){
-		opeRation = 'multiply';
-		$("#resultat").text('*');
-
-	} else if (opeRation === null){
-		opeRation = 'divide';
-		$("#resultat").text('/');
-	}
-});
+		} else if (opeRation === null){
+			opeRation = 'divide';
+			$("#resultat").text('/');
+		}
+	});
 
 // Click sur le = 
 
-$(".egal").click(function() {
+	$(".egal").click(function() {
 
-	result = calculer(nombre1, nombre2, opeRation);
-	console.log(result);
+		result = calculer(nombre1, nombre2, opeRation);
 
-	$("#resultat").text(result);
+		$("#resultat").text(result);
 
-});
+	});
+	
 })();
